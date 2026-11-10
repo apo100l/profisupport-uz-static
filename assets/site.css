@@ -8,7 +8,6 @@
 [data-theme="dark"]{--background-primary:#0d162e;--background-secondary:#212c46;--background-elevation:#212c46;--text-primary-default:#ffffff;--text-secondary-default:#a0acca;--text-main-default:#a8cbff;--text-main-hovered:#9bc3ff;--text-positive-default:#bfecab;--text-negative-default:#ffb6bd;--text-on-bright-default:#ffffff;--control-main-primary-default:#3686ff;--control-main-primary-hovered:#2178fd;--control-main-primary-pressed:#006cfd;--control-main-secondary-default:#033d92;--control-main-secondary-hovered:#0448ab;--surface-main-default:#022864;--surface-warning-default:#472103;--icon-main-default:#9bc3ff;--stroke-divider-default:#4f5c79;--stroke-control-default:#697797;--stroke-control-focused:#68a4ff;--decorative-deeporange:#ff7e00;--footer-background:#050b22;--footer-text:#ffffff;--footer-text-secondary:#a0acca;--shadow-card:0 0 0 rgba(0,0,0,0);}
 :root{--unit_1:4px;--unit_2:8px;--unit_3:12px;--unit_4:16px;--unit_6:24px;--unit_8:32px;--unit_12:48px;--unit_20:80px;--radius-4:4px;--radius-8:8px;--radius-16:16px;--radius-full:999px;--container-max:1176px;--prose-max:720px;--header-height:64px;--control-height-m:44px;--control-height-l:56px;--font-sans:Lato, "Helvetica Neue", Arial, sans-serif;}
 
-/* Production: Lato from cdn.cian.site (with Cyrillic) per CIAN fonts.css; Google Lato is Latin-only, Cyrillic falls back in previews. */
 
 /* ProfiSupport — component styles. Values come only from tokens.css (var(--…)). */
 .ps, .ps * { box-sizing: border-box; }
