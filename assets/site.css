@@ -340,3 +340,9 @@ a{color:var(--text-main-default)}a:hover{color:var(--text-main-hovered)}
  .ps-header.is-open .ps-nav a{min-height:44px;display:flex;align-items:center}
  .ps-burger{cursor:pointer}
 }
+
+/* footer tiles: fit text to tile */
+.ps-tile--e, .ps-tile--mark { container-type: inline-size; min-width: 0; }
+.ps-tile__mail { font-size: clamp(16px, 8.4cqi, 22px); line-height: 1.3; font-weight: 700; overflow-wrap: anywhere; }
+.ps-tile--mark { overflow: hidden; }
+.ps-tile--mark b { font-size: 15.5cqi; white-space: nowrap; }
