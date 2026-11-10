@@ -215,6 +215,7 @@
 .ps-screens__intro p { margin: 0; font-size: 17px; line-height: 26px; max-width: 40ch; }
 .ps-screens__row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--unit_6); }
 .ps-screens figure { margin: 0; }
+.ps-screens picture { display: block; }
 .ps-screens figcaption { margin-top: var(--unit_3); font-size: 16px; line-height: 24px; }
 @media (max-width: 899px) { .ps-screens { grid-template-columns: minmax(0, 1fr); } .ps-screens__row { gap: var(--unit_4); } }
 /* Questions: accordion, answer under its question */
