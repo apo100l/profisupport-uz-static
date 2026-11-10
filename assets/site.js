@@ -7,7 +7,7 @@ function swap(prefixBtn,prefixPane){
   document.querySelectorAll('[data-'+prefixPane+']').forEach(function(p){p.hidden=p.getAttribute('data-'+prefixPane)!==i});
  })});
 }
-swap('go','step');swap('qgo','qa');
+swap('go','step');
 var h=document.querySelector('.ps-header'),b=document.querySelector('.ps-burger');
 if(h&&b){
  // Narrow phones: the header has no room for the language switcher, so the menu carries a copy of it
