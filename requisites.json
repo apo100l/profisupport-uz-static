@@ -1,12 +1,12 @@
 {
   "_comment": "Single source of company requisites. Fill from the approved reference, character for character as in D&B and the Apple enrollment, then run `npm run requisites`. Empty values keep the yellow placeholders on the pages.",
-  "nameFull": { "uz": "", "ru": "", "en": "" },
-  "nameLatin": "PROFI-SUPPORT LLC",
-  "name": { "uz": "", "ru": "", "en": "PROFI-SUPPORT LLC" },
-  "stir": "",
-  "registered": { "uz": "", "ru": "", "en": "17.05.2023, Tashkent" },
-  "address": { "uz": "", "ru": "", "en": "73 Mirza-Ulugbek Street, Mirza-Ulugbek District, Tashkent, Republic of Uzbekistan" },
-  "phones": ["+998 70 325-15-16"],
+  "nameFull": { "uz": "\"PROFI SUPPORT\" MAS'ULIYATI CHEKLANGAN JAMIYAT", "ru": "\"PROFI SUPPORT\" MAS'ULIYATI CHEKLANGAN JAMIYAT", "en": "\"PROFI SUPPORT\" MAS'ULIYATI CHEKLANGAN JAMIYAT" },
+  "nameLatin": "\"PROFI SUPPORT\" MCHJ",
+  "name": { "uz": "\"PROFI SUPPORT\" MCHJ", "ru": "\"PROFI SUPPORT\" MCHJ", "en": "\"PROFI SUPPORT\" MCHJ" },
+  "stir": "310486030",
+  "registered": { "uz": "17.05.2023, Toshkent sh.", "ru": "17.05.2023, г. Ташкент", "en": "17.05.2023, Tashkent" },
+  "address": { "uz": "город Ташкент, Мирзо-Улугбекский район, Буз МФЙ, Мирзо Улугбек кучаси, 73-уй", "ru": "город Ташкент, Мирзо-Улугбекский район, Буз МФЙ, Мирзо Улугбек кучаси, 73-уй", "en": "73 Mirza-Ulugbek Street, Mirza-Ulugbek District, Tashkent, Republic of Uzbekistan" },
+  "phones": ["+998 90 983-43-50"],
   "dealTypes": { "uz": "", "ru": "", "en": "" },
   "revisionDate": ""
 }
