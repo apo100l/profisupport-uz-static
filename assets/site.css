@@ -342,3 +342,20 @@ a, button, [role="button"] { touch-action: manipulation; }
 .ps-qi__q:active { color: var(--text-primary-default); }
 .ps-burger:active, .ps-lang a:active { transform: scale(.97); }
 .ps-burger, .ps-lang a { transition: transform 160ms var(--ease-out), background-color .15s ease, color .15s ease; }
+
+/* Requisites: phone numbers never break mid-number; several numbers wrap between them */
+.ps-tel { white-space: nowrap; }
+/* Narrow phones (320–359px): the language switcher moves from the header into the menu */
+.ps-lang--menu { display: none; }
+@media (max-width: 359px) {
+  .ps-header__in { gap: var(--unit_3); }
+  .ps-header__end .ps-lang { display: none; }
+  .ps-header.is-open .ps-lang--menu { display: inline-flex; align-self: flex-start; margin-top: var(--unit_2); }
+}
+/* Footer, desktop: the city + language tile needs three columns; it moves to the wordmark row */
+@media (min-width: 900px) {
+  .ps-tile--s { grid-column: span 5; } .ps-tile--n { grid-column: span 4; } .ps-tile--e { grid-column: span 3; }
+  .ps-tile--mark { grid-column: span 5; order: 1; } .ps-tile--t { grid-column: span 3; order: 2; } .ps-tile--go { grid-column: span 4; order: 3; }
+}
+/* The big contact email may wrap after "@" on narrow phones instead of pushing the arrow off-screen */
+.ps-reach__mail { overflow-wrap: anywhere; }

@@ -1,0 +1,12 @@
+{
+  "_comment": "Single source of company requisites. Fill from the approved reference, character for character as in D&B and the Apple enrollment, then run `npm run requisites`. Empty values keep the yellow placeholders on the pages.",
+  "nameFull": { "uz": "", "ru": "", "en": "" },
+  "nameLatin": "",
+  "name": { "uz": "", "ru": "", "en": "" },
+  "stir": "",
+  "registered": { "uz": "", "ru": "", "en": "" },
+  "address": { "uz": "", "ru": "", "en": "" },
+  "phones": [],
+  "dealTypes": { "uz": "", "ru": "", "en": "" },
+  "revisionDate": ""
+}
