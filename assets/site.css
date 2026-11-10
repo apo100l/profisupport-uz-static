@@ -49,7 +49,7 @@
 /* Language switcher */
 .ps-lang { display: inline-flex; gap: 2px; padding: 2px; background: var(--background-secondary); border-radius: var(--radius-8); }
 .ps-lang a { min-width: 44px; min-height: 36px; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 14px; font-weight: 700; color: var(--text-secondary-default); text-decoration: none; }
-.ps-lang a[aria-current="true"] { background: var(--control-main-primary-default); color: var(--text-on-bright-default); }
+.ps-lang a[aria-current="page"] { background: var(--control-main-primary-default); color: var(--text-on-bright-default); }
 
 /* Header */
 .ps-header { position: sticky; top: 0; z-index: 10; background: var(--background-primary); }
@@ -147,7 +147,7 @@
 .ps-footer a { color: var(--footer-text); }
 @media (hover: hover) and (pointer: fine) { .ps-footer a:hover { color: var(--footer-text); text-decoration-thickness: 2px; } }
 .ps-footer :focus-visible { outline-color: var(--footer-text); }
-.ps-footer .ps-lang a:not([aria-current="true"]) { color: var(--footer-text); }
+.ps-footer .ps-lang a:not([aria-current="page"]) { color: var(--footer-text); }
 .ps-footer__grid { display: grid; gap: var(--unit_8); grid-template-columns: 1fr; }
 @media (min-width: 768px) { .ps-footer__grid { grid-template-columns: 2fr 1fr 1fr; } }
 .ps-footer dl { margin: 0; display: grid; gap: var(--unit_2); }
@@ -279,6 +279,7 @@
 .ps-h2 h1 { margin: 0; font-size: clamp(36px, 3.9vw, 60px); line-height: 1.04; font-weight: 900; letter-spacing: -0.02em; max-width: 13em; }
 .ps-h2__lead { margin: 0; font-size: 17px; line-height: 26px; max-width: 40ch; }
 .ps-h2__act { display: flex; flex-wrap: wrap; gap: var(--unit_3); }
+.ps-h2__soon { align-self: center; font-size: 15px; line-height: 22px; color: var(--text-secondary-default); }
 .ps-h2__stage { background: var(--background-secondary); border-radius: var(--radius-8); height: 620px; overflow: hidden; display: flex; justify-content: center; padding-top: var(--unit_12); }
 .ps-h2__stage .ps-app--list { width: 340px; align-self: flex-start; display: grid; gap: 12px; padding: 12px; background: var(--app-screen); border-radius: 28px 28px 0 0; }
 .ps-app--list .ps-app__card { border-radius: 20px; }
@@ -354,3 +355,9 @@ a, button, [role="button"] { touch-action: manipulation; }
 }
 /* The big contact email may wrap after "@" on narrow phones instead of pushing the arrow off-screen */
 .ps-reach__mail { overflow-wrap: anywhere; }
+
+/* Skip link: hidden until focused from the keyboard */
+.ps-skip { position: absolute; left: var(--unit_4); top: -100px; z-index: 20; padding: var(--unit_2) var(--unit_4); border-radius: var(--radius-8); background: var(--control-main-primary-default); color: var(--text-on-bright-default); font-weight: 700; text-decoration: none; }
+.ps a.ps-skip { color: var(--text-on-bright-default); }
+.ps-skip:focus { top: var(--unit_2); }
+main { display: block; }
