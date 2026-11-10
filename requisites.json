@@ -1,11 +1,11 @@
 {
   "_comment": "Single source of company requisites. Fill from the approved reference, character for character as in D&B and the Apple enrollment, then run `npm run requisites`. Empty values keep the yellow placeholders on the pages.",
   "nameFull": { "uz": "", "ru": "", "en": "" },
-  "nameLatin": "",
-  "name": { "uz": "", "ru": "", "en": "" },
+  "nameLatin": "PROFI-SUPPORT LLC",
+  "name": { "uz": "", "ru": "", "en": "PROFI-SUPPORT LLC" },
   "stir": "",
-  "registered": { "uz": "", "ru": "", "en": "" },
-  "address": { "uz": "", "ru": "", "en": "" },
+  "registered": { "uz": "", "ru": "", "en": "17.05.2023, Tashkent" },
+  "address": { "uz": "", "ru": "", "en": "73 Mirza-Ulugbek Street, Mirza-Ulugbek District, Tashkent, Republic of Uzbekistan" },
   "phones": [],
   "dealTypes": { "uz": "", "ru": "", "en": "" },
   "revisionDate": ""
