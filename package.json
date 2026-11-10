@@ -1,0 +1,10 @@
+{
+  "name": "profisupport-uz-static",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site profisupport.uz",
+  "scripts": {
+    "start": "python3 -m http.server ${PORT:-8080} --bind 127.0.0.1",
+    "serve": "npm start"
+  }
+}
