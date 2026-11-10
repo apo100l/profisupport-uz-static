@@ -122,7 +122,7 @@
 /* Steps (delete account) */
 .ps-steps { list-style: none; margin: 0; padding: 0; counter-reset: s; display: grid; gap: var(--unit_4); }
 .ps-steps li { counter-increment: s; display: grid; grid-template-columns: 40px 1fr; gap: var(--unit_4); align-items: start; }
-.ps-steps li::before { content: counter(s); width: 40px; height: 40px; border-radius: 50%; background: var(--surface-warning-default); color: var(--text-primary-default); display: flex; align-items: center; justify-content: center; font-weight: 700; }
+.ps-steps li::before { content: counter(s); width: 40px; height: 40px; border-radius: 50%; background: var(--background-secondary); color: var(--text-primary-default); display: flex; align-items: center; justify-content: center; font-weight: 700; }
 .ps-steps b { display: block; font-size: 18px; line-height: 26px; }
 .ps-steps span { color: var(--text-secondary-default); }
 
@@ -361,3 +361,13 @@ a, button, [role="button"] { touch-action: manipulation; }
 .ps a.ps-skip { color: var(--text-on-bright-default); }
 .ps-skip:focus { top: var(--unit_2); }
 main { display: block; }
+
+/* Headings: balanced lines, no lone last word */
+.ps h1, .ps h2, .ps-step__say { text-wrap: balance; }
+/* Contact cards with an email or phone: the whole card is the tap target */
+.ps-contact:has(a) { position: relative; transition: background-color .15s ease; }
+.ps-contact:has(a) a::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius-8); }
+.ps-contact:has(a:focus-visible) { outline: 2px solid var(--stroke-control-focused); outline-offset: 2px; }
+.ps-contact a:focus-visible { outline: none; }
+@media (hover: hover) and (pointer: fine) { .ps-contact:has(a):hover { background: var(--control-main-secondary-default); } }
+.ps-contact:has(a):active { background: var(--control-main-secondary-default); }
