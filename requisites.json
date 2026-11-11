@@ -1,8 +1,8 @@
 {
   "_comment": "Single source of company requisites. Fill from the approved reference, character for character as in D&B and the Apple enrollment, then run `npm run requisites`. Empty values keep the yellow placeholders on the pages.",
-  "nameFull": { "uz": "\"PROFI SUPPORT\" MAS'ULIYATI CHEKLANGAN JAMIYAT", "ru": "\"PROFI SUPPORT\" MAS'ULIYATI CHEKLANGAN JAMIYAT", "en": "\"PROFI SUPPORT\" MAS'ULIYATI CHEKLANGAN JAMIYAT" },
+  "nameFull": { "uz": "\"PROFI SUPPORT\" MAS'ULIYATI CHEKLANGAN JAMIYAT", "ru": "Общество с ограниченной ответственностью \"ПРОФИ САППОРТ\"", "en": "\"PROFI SUPPORT\" MAS'ULIYATI CHEKLANGAN JAMIYAT" },
   "nameLatin": "\"PROFI SUPPORT\" MCHJ",
-  "name": { "uz": "\"PROFI SUPPORT\" MCHJ", "ru": "\"PROFI SUPPORT\" MCHJ", "en": "\"PROFI SUPPORT\" MCHJ" },
+  "name": { "uz": "\"PROFI SUPPORT\" MCHJ", "ru": "ООО \"ПРОФИ САППОРТ\"", "en": "\"PROFI SUPPORT\" MCHJ" },
   "stir": "310486030",
   "registered": { "uz": "17.05.2023, Toshkent sh.", "ru": "17.05.2023, г. Ташкент", "en": "17.05.2023, Tashkent" },
   "address": { "uz": "Toshkent shahri, Mirzo Ulug'bek tumani BO'Z MFY, M.ULUG'BEK KO'CHASI, 73-UY", "ru": "город Ташкент, Мирзо-Улугбекский район, Буз МФЙ, Мирзо Улугбек кучаси, 73-уй", "en": "73 Mirza-Ulugbek Street, Mirza-Ulugbek District, Tashkent, Republic of Uzbekistan" },
