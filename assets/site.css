@@ -107,7 +107,8 @@
 /* Contact card */
 .ps-contacts { display: grid; gap: var(--unit_4); grid-template-columns: 1fr; }
 @media (min-width: 640px) { .ps-contacts { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1000px) { .ps-contacts { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 640px) and (max-width: 999.98px) { .ps-contact:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+@media (min-width: 1000px) { .ps-contacts { grid-template-columns: repeat(3, 1fr); } }
 .ps-contact { background: var(--background-secondary); border-radius: var(--radius-8); padding: var(--unit_6); }
 .ps-contact .ps-label { display: block; margin-bottom: var(--unit_2); }
 .ps-contact b { display: block; font-size: 18px; line-height: 26px; font-weight: 600; word-break: break-word; }
