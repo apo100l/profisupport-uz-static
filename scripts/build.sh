@@ -41,6 +41,9 @@ Options -Indexes
   <FilesMatch "\.(css|js)$">
     Header set Cache-Control "public, max-age=86400"
   </FilesMatch>
+  <FilesMatch "^(robots\.txt|sitemap\.xml)$">
+    Header set Cache-Control "public, max-age=300"
+  </FilesMatch>
   <FilesMatch "\.html$">
     Header set Cache-Control "no-cache"
   </FilesMatch>
