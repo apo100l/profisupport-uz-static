@@ -7,6 +7,8 @@
     "start": "python3 -m http.server ${PORT:-8080} --bind 127.0.0.1",
     "serve": "npm start",
     "requisites": "node scripts/requisites.mjs",
-    "typograph": "node scripts/typograph.mjs"
+    "typograph": "node scripts/typograph.mjs",
+    "build": "sh scripts/build.sh",
+    "deploy": "sh scripts/deploy.sh"
   }
 }

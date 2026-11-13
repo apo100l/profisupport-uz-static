@@ -1,21 +1,32 @@
-# profisupport.uz — статическая сборка (демо)
+# profisupport.uz — статический сайт
 
 Статический сайт: только HTML, CSS, шрифты и картинки. Серверного кода и внешних запросов нет, шрифт Lato 2.015 (латиница и кириллица, лицензия OFL — `assets/fonts/OFL.txt`) лежит в `assets/fonts`.
 
-Демо: https://apo100l.github.io/profisupport-uz-static/
+Сайт: https://profisupport.uz/ — хостинг Plesk на u17.billur.com, DNS и CDN в Cloudflare.
 
 ## Структура
 
-- `/` — главная на узбекском
+- `/` — копия узбекской главной; на хостинге `.htaccess` отдаёт 301 на `/uz/`
 - `/{uz|ru|en}/` и `about/`, `contacts/`, `support/`, `privacy/`, `terms/`, `delete-account/` — 22 страницы
 - `assets/site.css`, `assets/site.js` — стили и небольшой JS (переключатели на главной, меню на телефоне)
-- `robots.txt` и `<meta name="robots" content="noindex">` — демо закрыто от индексации. Перед боевой публикацией убрать.
+- `robots.txt` открыт для индексации, `noindex` стоит только на `404.html`
 
-Ссылки относительные, поэтому сайт работает и в корне домена, и в подпапке (как на GitHub Pages). Исключение — `404.html`: в нём абсолютные пути с префиксом `/profisupport-uz-static/`.
+Ссылки относительные, поэтому сайт работает и в корне домена, и в подпапке. Исключение — `404.html`: в нём пути от корня (`/assets/…`, `/uz/`).
 
 ## Локально
 
     npm start          # http://127.0.0.1:8080/, порт меняется через PORT=3000 npm start
+
+## Выкладка
+
+    npm run build      # dist/ и profisupport-uz.zip
+    npm run deploy     # сборка и загрузка в httpdocs по FTPS
+
+`build` копирует в `dist/` только сайт (без `dev/`, `scripts/`, `package.json`, `requisites.json`, README) и пишет `.htaccess`: страница 404, редиректы 301 (`/` → `/uz/`, короткие пути вроде `/support/` → `/uz/support/`, `…/index.html` → адрес папки), gzip, кэш, заголовки безопасности.
+
+`deploy` берёт логин и пароль FTP из `~/.netrc` (`machine 83.69.136.99 login … password …`). Подключение только по TLS 1.2: на TLS 1.3 сервер обрывает передачу (ответ 426), и файл остаётся пустым.
+
+Cloudflare кэширует CSS, JS, шрифты, картинки и `robots.txt` (HTML — нет). После их изменения сбросить кэш: Caching → Purge Cache. Иначе посетители получат старую или пустую версию.
 
 ## Реквизиты
 
@@ -53,18 +64,18 @@
 2. **Реквизиты только через `requisites.json`.** На страницах их руками не правим, после изменения запускаем `npm run requisites`. Новых жёлтых плашек `ps-ph` не появилось.
 3. **Типографика.** После правки русских текстов запущен `npm run typograph`, и повторный запуск пишет `0 pages updated`. Почтовые адреса и телефоны в тексте — ссылки `mailto:` и `tel:`.
 4. **Вёрстка не ломается.** Нет горизонтальной прокрутки на ширинах 320, 390, 820, 1024 и 1440 px, нет ошибок в консоли, меню, переключатель языков, шаги на главной и вопросы-аккордеон работают с мыши, пальца и клавиатуры.
-5. **Lighthouse не просел.** На изменённых страницах, mobile и desktop: Performance не ниже 95, Accessibility и Best Practices 100, в SEO не падает ничего, кроме `is-crawlable` (демо закрыто от индексации). CLS меньше 0,1, LCP на mobile меньше 2,5 с. Проверка одной страницы:
+5. **Lighthouse не просел.** На изменённых страницах, mobile и desktop: Performance не ниже 95, Accessibility и Best Practices 100, в SEO 100. CLS меньше 0,1, LCP на mobile меньше 2,5 с. Проверка одной страницы:
 
-        npx lighthouse@12.8.2 https://apo100l.github.io/profisupport-uz-static/ru/ --view
+        npx lighthouse@12.8.2 https://profisupport.uz/ru/ --view
 
 6. **SEO-разметка страницы на месте.** Один `<h1>`. Свой `<title>` и `meta description` на языке страницы. canonical и hreflang ведут на `https://profisupport.uz/…`. Если менялся JSON-LD — он проходит https://validator.schema.org/.
 7. **Картинки.** Заданы `width` и `height` и осмысленный `alt`. Скриншоты лежат в WebP и в копии шириной 360 px.
 8. **Движение.** Анимируются только `transform` и `opacity`. При `prefers-reduced-motion` перемещений нет.
-9. **Демо обновилось.** После пуша изменение видно на GitHub Pages.
+9. **Сайт обновился.** После `npm run deploy` (и сброса кэша Cloudflare, если менялись не только HTML) изменение видно на https://profisupport.uz/.
 
 ### Публикация на profisupport.uz
 
-Сайт готов к запуску, когда выполнены все три блока.
+Сайт выложен и открыт для индексации. Ниже — что осталось закрыть.
 
 **Содержание**
 
@@ -78,24 +89,14 @@
 5. **Вычитка.** Узбекские и английские тексты вычитаны носителем.
 6. **Магазины.** Ссылки на App Store и Google Play заменили строку «Скоро». Адреса страниц поддержки, политики и удаления аккаунта внесены в App Store Connect и Play Console.
 
-**Техника при переезде**
+**Техника**
 
-canonical, hreflang (с `x-default` на узбекскую версию), Open Graph, JSON-LD и `sitemap.xml` уже указывают на `https://profisupport.uz/`. Остаётся:
+Сделано: сайт на хостинге, `noindex` снят, `robots.txt` открыт, 404 с путями от корня, 301 с `/` на `/uz/`, gzip, кэш, базовые заголовки безопасности. Остаётся:
 
-1. Убрать `<meta name="robots" content="noindex, nofollow">` со всех страниц, кроме `404.html`.
-2. Заменить `robots.txt` на открытый, он должен лежать в корне домена:
-
-        User-agent: *
-        Allow: /
-
-        Sitemap: https://profisupport.uz/sitemap.xml
-
-   Пускать ли обучающих ботов (GPTBot, ClaudeBot, Google-Extended, CCBot) — отдельное решение; поисковых и пользовательских ботов ИИ (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot) лучше пускать.
-3. В `404.html` заменить префикс `/profisupport-uz-static/` на `/`.
-4. Не выкладывать `dev/`, `scripts/`, `package.json`, `requisites.json` и `README.md`.
-5. Решить, что отдаёт корень `/`: сейчас это копия `/uz/` с canonical на `/uz/`; проще сделать 301 на `/uz/`.
-6. На хостинге: долгий кэш для `assets/` (лучше с версией в имени файла), Brotli или gzip, HSTS и базовые заголовки безопасности.
-7. Отправить `sitemap.xml` в Google Search Console и Яндекс Вебмастер.
+1. Пускать ли обучающих ботов (GPTBot, ClaudeBot, Google-Extended, CCBot) — отдельное решение; поисковых и пользовательских ботов ИИ (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot) лучше пускать.
+2. HSTS — после того, как HTTPS работает стабильно (в Cloudflare: Always Use HTTPS, SSL «Full (strict)»).
+3. Отключить Email Address Obfuscation в Cloudflare: она подменяет ссылки `mailto:`.
+4. Отправить `sitemap.xml` в Google Search Console и Яндекс Вебмастер.
 
 **Проверка после выкладки**
 
